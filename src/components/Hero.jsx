@@ -1,51 +1,70 @@
-import { Suspense } from 'react';
-import { motion } from 'framer-motion';
-import { Canvas } from '@react-three/fiber';
-import { OrbitControls, Float } from '@react-three/drei';
-import { Button } from '@/components/ui/button';
-import { Download, Mail } from 'lucide-react';
-import ParticlesBG from './ParticlesGB';
-import { heroVariants, textReveal, fadeInUp } from '../lib/motion';
-import { personalInfo } from '../lib/data';
+import { Suspense } from "react";
+import { motion } from "framer-motion";
+import { Canvas } from "@react-three/fiber";
+import { OrbitControls, Float } from "@react-three/drei";
+import { Button } from "@/components/ui/button";
+import { Download, Mail } from "lucide-react";
+import ParticlesBG from "./ParticlesGB";
+import { heroVariants, textReveal, fadeInUp } from "../lib/motion";
+import { personalInfo } from "../lib/data";
 
-// Three.js Gold Cube Component
+// ---------------- Gold Cube Component ----------------
 const GoldCube = () => {
   return (
     <Float speed={2} rotationIntensity={1} floatIntensity={0.5}>
-      <mesh>
+      {/* Solid gold cube */}
+      <mesh castShadow>
         <boxGeometry args={[2, 2, 2]} />
         <meshStandardMaterial
           color="#FFD700"
           metalness={0.8}
           roughness={0.2}
-          wireframe={false}
         />
       </mesh>
+      {/* Wireframe outline */}
       <mesh>
         <boxGeometry args={[2.1, 2.1, 2.1]} />
         <meshBasicMaterial
           color="#FFD700"
-          wireframe={true}
+          wireframe
           opacity={0.3}
-          transparent={true}
+          transparent
         />
       </mesh>
     </Float>
   );
 };
 
-// Three.js Scene
+// ---------------- Three.js Scene ----------------
 const ThreeScene = () => {
+  const DPR =
+    typeof window !== "undefined"
+      ? Math.min(window.devicePixelRatio, 2)
+      : 1;
+
   return (
     <Canvas
+      shadows
+      gl={{ antialias: true }}
       camera={{ position: [0, 0, 6], fov: 45 }}
-      dpr={Math.min(window.devicePixelRatio, 2)}
+      dpr={DPR}
       className="absolute inset-0"
     >
-      <ambientLight intensity={0.2} />
-      <directionalLight position={[5, 5, 5]} intensity={1} color="#FFD700" />
+      <ambientLight intensity={0.3} />
+      <directionalLight
+        position={[5, 5, 5]}
+        intensity={1}
+        color="#FFD700"
+      />
+      <spotLight
+        position={[10, 10, 10]}
+        angle={0.3}
+        penumbra={1}
+        intensity={1.5}
+        castShadow
+      />
       <pointLight position={[-5, -5, 5]} intensity={0.5} color="#FFFFFF" />
-      
+
       <Suspense fallback={null}>
         <GoldCube />
         <OrbitControls
@@ -59,19 +78,25 @@ const ThreeScene = () => {
   );
 };
 
+// ---------------- Hero Section ----------------
 const Hero = () => {
   const scrollToContact = () => {
-    const element = document.querySelector('#contact');
+    const element = document.querySelector("#contact");
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+      element.scrollIntoView({ behavior: "smooth" });
     }
   };
 
   return (
-    <section id="hero" className="min-h-screen relative flex items-center justify-center overflow-hidden">
-      {/* Background Elements */}
+    <section
+      id="hero"
+      className="min-h-screen relative flex items-center justify-center overflow-hidden"
+    >
+      {/* Background Particles */}
       <ParticlesBG />
-      <div className="absolute inset-0 z-10">
+
+      {/* 3D Scene (hidden on small screens) */}
+      <div className="absolute inset-0 z-10 hidden sm:block">
         <ThreeScene />
       </div>
 
@@ -124,15 +149,17 @@ const Hero = () => {
           className="flex flex-col sm:flex-row gap-6 justify-center items-center"
         >
           <Button
+            aria-label="Download Resume"
             size="lg"
             className="bg-gradient-gold hover:shadow-gold text-background font-semibold px-8 py-3 rounded-2xl transition-all duration-300 group"
-            onClick={() => window.open(personalInfo.resume, '_blank')}
+            onClick={() => window.open(personalInfo.resume, "_blank")}
           >
             <Download className="mr-2 h-5 w-5 group-hover:animate-bounce" />
             Download Resume
           </Button>
-          
+
           <Button
+            aria-label="Get in touch"
             variant="outline"
             size="lg"
             className="border-primary text-primary hover:bg-primary hover:text-background font-semibold px-8 py-3 rounded-2xl transition-all duration-300 group backdrop-blur-sm"
@@ -149,9 +176,19 @@ const Hero = () => {
           className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
         >
           <div className="flex flex-col items-center space-y-2">
-            <span className="text-sm text-muted-foreground">Scroll to explore</span>
+            <span className="text-sm text-muted-foreground">
+              Scroll to explore
+            </span>
             <div className="w-6 h-10 border-2 border-primary rounded-full flex justify-center">
-              <div className="w-1 h-3 bg-primary rounded-full animate-bounce mt-2"></div>
+              <motion.div
+                animate={{ y: [0, 8, 0] }}
+                transition={{
+                  duration: 1.5,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                }}
+                className="w-1 h-3 bg-primary rounded-full mt-2"
+              />
             </div>
           </div>
         </motion.div>

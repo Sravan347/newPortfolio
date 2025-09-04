@@ -1,36 +1,47 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
+/* Dark mode variant */
 @custom-variant dark (&:is(.dark *));
 
+/* Theme radius & color mapping */
 @theme inline {
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
+
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);
   --color-card-foreground: var(--card-foreground);
   --color-popover: var(--popover);
   --color-popover-foreground: var(--popover-foreground);
+
   --color-primary: var(--primary);
   --color-primary-foreground: var(--primary-foreground);
+  --color-primary-hover: var(--primary-hover);
+
   --color-secondary: var(--secondary);
   --color-secondary-foreground: var(--secondary-foreground);
+
   --color-muted: var(--muted);
   --color-muted-foreground: var(--muted-foreground);
   --color-accent: var(--accent);
   --color-accent-foreground: var(--accent-foreground);
+
   --color-destructive: var(--destructive);
   --color-border: var(--border);
   --color-input: var(--input);
   --color-ring: var(--ring);
+
   --color-chart-1: var(--chart-1);
   --color-chart-2: var(--chart-2);
   --color-chart-3: var(--chart-3);
   --color-chart-4: var(--chart-4);
   --color-chart-5: var(--chart-5);
+
+  /* Sidebar */
   --color-sidebar: var(--sidebar);
   --color-sidebar-foreground: var(--sidebar-foreground);
   --color-sidebar-primary: var(--sidebar-primary);
@@ -41,130 +52,81 @@
   --color-sidebar-ring: var(--sidebar-ring);
 }
 
-:root {
-  --radius: 0.625rem;
-  --background: oklch(27.291% 0.02151 18.482);
-  --foreground: oklch(0.129 0.042 264.695);
-  --card: oklch(58.291% 0.09911 255.511);
-  --card-foreground: oklch(0.129 0.042 264.695);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.129 0.042 264.695);
-  --primary: oklch(0.208 0.042 265.755);
-  --primary-foreground: oklch(0.984 0.003 247.858);
-  --secondary: oklch(0.968 0.007 247.896);
-  --secondary-foreground: oklch(0.208 0.042 265.755);
-  --muted: oklch(0.968 0.007 247.896);
-  --muted-foreground: oklch(0.554 0.046 257.417);
-  --accent: oklch(0.968 0.007 247.896);
-  --accent-foreground: oklch(0.208 0.042 265.755);
-  --destructive: oklch(0.577 0.245 27.325);
-  --border: oklch(0.929 0.013 255.508);
-  --input: oklch(0.929 0.013 255.508);
-  --ring: oklch(0.704 0.04 256.788);
-  --chart-1: oklch(0.646 0.222 41.116);
-  --chart-2: oklch(0.6 0.118 184.704);
-  --chart-3: oklch(0.398 0.07 227.392);
-  --chart-4: oklch(0.828 0.189 84.429);
-  --chart-5: oklch(0.769 0.188 70.08);
-  --sidebar: oklch(0.984 0.003 247.858);
-  --sidebar-foreground: oklch(0.129 0.042 264.695);
-  --sidebar-primary: oklch(0.208 0.042 265.755);
-  --sidebar-primary-foreground: oklch(0.984 0.003 247.858);
-  --sidebar-accent: oklch(0.968 0.007 247.896);
-  --sidebar-accent-foreground: oklch(0.208 0.042 265.755);
-  --sidebar-border: oklch(0.929 0.013 255.508);
-  --sidebar-ring: oklch(0.704 0.04 256.788);
-}
-
-.dark {
-  --background: oklch(0.129 0.042 264.695);
-  --foreground: oklch(0.984 0.003 247.858);
-  --card: oklch(0.208 0.042 265.755);
-  --card-foreground: oklch(0.984 0.003 247.858);
-  --popover: oklch(0.208 0.042 265.755);
-  --popover-foreground: oklch(0.984 0.003 247.858);
-  --primary: oklch(0.929 0.013 255.508);
-  --primary-foreground: oklch(0.208 0.042 265.755);
-  --secondary: oklch(0.279 0.041 260.031);
-  --secondary-foreground: oklch(0.984 0.003 247.858);
-  --muted: oklch(0.279 0.041 260.031);
-  --muted-foreground: oklch(0.704 0.04 256.788);
-  --accent: oklch(0.279 0.041 260.031);
-  --accent-foreground: oklch(0.984 0.003 247.858);
-  --destructive: oklch(0.704 0.191 22.216);
-  --border: oklch(1 0 0 / 10%);
-  --input: oklch(1 0 0 / 15%);
-  --ring: oklch(0.551 0.027 264.364);
-  --chart-1: oklch(0.488 0.243 264.376);
-  --chart-2: oklch(0.696 0.17 162.48);
-  --chart-3: oklch(0.769 0.188 70.08);
-  --chart-4: oklch(0.627 0.265 303.9);
-  --chart-5: oklch(0.645 0.246 16.439);
-  --sidebar: oklch(0.208 0.042 265.755);
-  --sidebar-foreground: oklch(0.984 0.003 247.858);
-  --sidebar-primary: oklch(0.488 0.243 264.376);
-  --sidebar-primary-foreground: oklch(0.984 0.003 247.858);
-  --sidebar-accent: oklch(0.279 0.041 260.031);
-  --sidebar-accent-foreground: oklch(0.984 0.003 247.858);
-  --sidebar-border: oklch(1 0 0 / 10%);
-  --sidebar-ring: oklch(0.551 0.027 264.364);
-}
-
 @layer base {
   :root {
-    /* Core luxury palette */
-    --background: 0 0% 5%;           /* Rich black #0D0D0D */
-    --foreground: 0 0% 100%;         /* Pure white #FFFFFF */
-    
-    /* Gold accent system */
-    --primary: 51 100% 50%;          /* Gold #FFD700 */
-    --primary-foreground: 0 0% 5%;   /* Black text on gold */
-    --primary-hover: 43 74% 49%;     /* Goldenrod #DAA520 */
-    
-    /* Card and surface colors */
-    --card: 0 0% 8%;                 /* Slightly lighter black for cards */
-    --card-foreground: 0 0% 100%;    /* White text on cards */
-    --card-border: 0 0% 15%;         /* Subtle border for cards */
-    
-    /* Secondary accents */
-    --secondary: 0 0% 75%;           /* Silver #C0C0C0 */
-    --secondary-foreground: 0 0% 5%; /* Black text on silver */
-    
-    /* Interactive states */
-    --muted: 0 0% 20%;               /* Muted backgrounds */
-    --muted-foreground: 0 0% 65%;    /* Muted text */
-    --accent: 51 100% 50%;           /* Gold accent */
-    --accent-foreground: 0 0% 5%;    /* Black on gold */
-    
+    /* Dark (default) luxury palette */
+    --background: hsl(0 0% 0%);          /* Black */
+    --foreground: hsl(0 0% 100%);        /* White */
+
+    /* Gold accents */
+    --primary: hsl(51 100% 50%);
+    --primary-foreground: hsl(0 0% 5%);
+    --primary-hover: hsl(43 74% 49%);
+
+    /* Surfaces */
+    --card: hsl(0, 2%, 13%);
+    --card-foreground: hsl(0 0% 100%);
+    --card-border: hsl(0 0% 100%);
+
+    /* Secondary */
+    --secondary: hsl(0 0% 75%);
+    --secondary-foreground: hsl(0 0% 5%);
+
+    /* UI states */
+    --muted: hsl(0 0% 20%);
+    --muted-foreground: hsl(0 0% 65%);
+    --accent: hsl(51 100% 50%);
+    --accent-foreground: hsl(0 0% 5%);
+
     /* Form elements */
-    --input: 0 0% 15%;               /* Input backgrounds */
-    --border: 0 0% 15%;              /* General borders */
-    --ring: 51 100% 50%;             /* Focus rings in gold */
-    
-    /* Popover and modal */
-    --popover: 0 0% 8%;
-    --popover-foreground: 0 0% 100%;
-    
-    /* Status colors */
-    --destructive: 0 84% 60%;
-    --destructive-foreground: 0 0% 100%;
-    
-    /* Custom design tokens */
-    --radius: 4px;                   /* Base border radius */
-    
+    --input: hsl(0 0% 15%);
+    --border: hsl(0 0% 15%);
+    --ring: hsl(51 100% 50%);
+
+    /* Popovers */
+    --popover: hsl(0 0% 8%);
+    --popover-foreground: hsl(0 0% 100%);
+
+    /* Status */
+    --destructive: hsl(0 84% 60%);
+    --destructive-foreground: hsl(0 0% 100%);
+
+    /* Sidebar */
+    --sidebar: hsl(0 0% 5%);
+    --sidebar-foreground: hsl(0 0% 100%);
+    --sidebar-primary: hsl(51 100% 50%);
+    --sidebar-primary-foreground: hsl(0 0% 5%);
+    --sidebar-accent: hsl(43 74% 49%);
+    --sidebar-accent-foreground: hsl(0 0% 5%);
+    --sidebar-border: hsl(0 0% 15%);
+    --sidebar-ring: hsl(51 100% 50%);
+
+    /* Custom tokens */
+    --radius: 4px;
+
     /* Gradients */
-    --gradient-gold: linear-gradient(135deg, hsl(51, 100%, 50%), hsl(43, 74%, 49%));
-    --gradient-dark: linear-gradient(135deg, hsl(0, 0%, 5%), hsl(0, 0%, 10%));
-    --gradient-glow: radial-gradient(circle at center, hsl(51, 100%, 50% / 0.1), transparent 70%);
-    
+    --gradient-gold: linear-gradient(135deg, hsl(51 100% 50%), hsl(43 74% 49%));
+    --gradient-dark: linear-gradient(135deg, hsl(0 0% 5%), hsl(0 0% 10%));
+    --gradient-glow: radial-gradient(circle at center, hsl(51 100% 50% / 0.1), transparent 70%);
+
     /* Shadows */
-    --shadow-gold: 0 10px 40px hsl(51, 100%, 50% / 0.15);
-    --shadow-elegant: 0 20px 60px hsl(0, 0%, 0% / 0.5);
-    --shadow-soft: 0 4px 20px hsl(0, 0%, 0% / 0.25);
-    
-    /* Animation timing */
+    --shadow-gold: 0 10px 40px hsl(51 100% 50% / 0.15);
+    --shadow-elegant: 0 20px 60px hsl(0 0% 0% / 0.5);
+    --shadow-soft: 0 4px 20px hsl(0 0% 0% / 0.25);
+    --shadow-inner-gold: inset 0 0 8px hsl(51 100% 50% / 0.15);
+
+    /* Animations */
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     --transition-bounce: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+
+  /* Optional light theme */
+  .light {
+    --background: hsl(0 0% 100%);
+    --foreground: hsl(0 0% 10%);
+    --card: hsl(0 0% 98%);
+    --muted: hsl(0 0% 90%);
+    --border: hsl(0 0% 85%);
   }
 }
 
@@ -178,23 +140,14 @@
     scroll-behavior: smooth;
   }
 
-  /* Custom scrollbar */
-  ::-webkit-scrollbar {
-    width: 8px;
-  }
-  
-  ::-webkit-scrollbar-track {
-    background: hsl(var(--background));
-  }
-  
+  /* Scrollbar */
+  ::-webkit-scrollbar { width: 8px; }
+  ::-webkit-scrollbar-track { background: var(--background); }
   ::-webkit-scrollbar-thumb {
-    background: hsl(var(--primary));
+    background: var(--primary);
     border-radius: 4px;
   }
-  
-  ::-webkit-scrollbar-thumb:hover {
-    background: hsl(var(--primary-hover));
-  }
+  ::-webkit-scrollbar-thumb:hover { background: var(--primary-hover); }
 
   /* Typography */
   h1, h2, h3, h4, h5, h6 {
@@ -204,11 +157,11 @@
 
   /* Focus states */
   *:focus-visible {
-    outline: 2px solid hsl(var(--ring));
+    outline: 2px solid var(--ring);
     outline-offset: 2px;
   }
 
-  /* Reduced motion support */
+  /* Reduced motion */
   @media (prefers-reduced-motion: reduce) {
     * {
       animation-duration: 0.01ms !important;
@@ -219,11 +172,10 @@
 }
 
 @layer components {
-  /* Gold underline animation for nav links */
+  /* Nav link underline */
   .nav-link {
     @apply relative transition-colors duration-300;
   }
-  
   .nav-link::after {
     content: '';
     position: absolute;
@@ -236,18 +188,26 @@
     transform-origin: right;
     transition: transform 0.3s ease;
   }
-  
   .nav-link.active::after,
   .nav-link:hover::after {
     transform: scaleX(1);
     transform-origin: left;
   }
+  .nav-link:hover {
+    text-shadow: 0 0 8px hsl(51 100% 60% / 0.8);
+  }
 
-  /* Glass morphism effect */
+  /* Glassmorphism */
   .glass {
-    background: hsl(var(--card) / 0.1);
-    backdrop-filter: blur(10px);
-    border: 1px solid hsl(var(--border) / 0.2);
+    background: hsl(0 0% 100% / 0.05);
+    backdrop-filter: blur(20px);
+    border: 1px solid hsl(0 0% 100% / 0.1);
+  }
+  .glass-gold {
+    background: hsl(0 0% 100% / 0.04);
+    backdrop-filter: blur(30px);
+    border: 1px solid hsl(51 100% 50% / 0.2);
+    box-shadow: var(--shadow-gold), var(--shadow-soft);
   }
 
   /* Gold gradient text */
@@ -258,19 +218,49 @@
     -webkit-text-fill-color: transparent;
   }
 
-  /* Hover glow effect */
+  /* Hover glow */
   .hover-glow {
     transition: var(--transition-smooth);
   }
-  
   .hover-glow:hover {
     box-shadow: var(--shadow-gold);
     transform: translateY(-2px);
   }
 
-  /* 3D tilt effect */
+  /* 3D tilt */
   .tilt-3d {
     transform-style: preserve-3d;
     transition: var(--transition-smooth);
+    transform: perspective(1000px)
+               rotateX(var(--rotateX, 0deg))
+               rotateY(var(--rotateY, 0deg))
+               translateZ(var(--depth, 0px));
+  }
+
+  /* Gold shimmer */
+  @keyframes gold-shimmer {
+    0% { background-position: -200% 0; }
+    100% { background-position: 200% 0; }
+  }
+  .shimmer {
+    background: linear-gradient(
+      90deg,
+      hsl(51 100% 50% / 0.2) 25%,
+      hsl(51 100% 50% / 0.6) 50%,
+      hsl(51 100% 50% / 0.2) 75%
+    );
+    background-size: 200% 100%;
+    animation: gold-shimmer 2s infinite linear;
+  }
+
+  /* Float animation (motion-safe) */
+  @media (prefers-reduced-motion: no-preference) {
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+    .float {
+      animation: float 6s ease-in-out infinite;
+    }
   }
 }

@@ -4,6 +4,7 @@ import SectionHeading from './SectionHeading';
 import { fadeInUp, slideInFromLeft, slideInFromRight, staggerContainer } from '../lib/motion';
 import { personalInfo } from '../lib/data';
 import { useTilt } from '../hooks/useTilt';
+import codeImage from '../assets/coding.jpg';
 
 const About = () => {
   const tiltRef = useTilt();
@@ -29,18 +30,19 @@ const About = () => {
             variants={slideInFromLeft}
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true, margin: '-100px' }}
+            viewport={{ once: true, margin: "-100px" }}
             className="flex justify-center lg:justify-start"
           >
             <div
               ref={tiltRef}
-              className="relative w-80 h-80 rounded-3xl overflow-hidden shadow-elegant hover-glow"
+              className="relative w-[350px] h-[350px] md:w-[450px] md:h-[450px] lg:w-[500px] lg:h-[500px] rounded-3xl overflow-hidden shadow-elegant hover-glow"
             >
               <div className="absolute inset-0 bg-gradient-gold opacity-20"></div>
               <img
-                src="/api/placeholder/320/320"
+                src={codeImage}
                 alt={personalInfo.name}
                 className="w-full h-full object-cover"
+                loading="lazy"
               />
               <div className="absolute inset-0 border-2 border-primary/30 rounded-3xl"></div>
             </div>
@@ -51,7 +53,7 @@ const About = () => {
             variants={slideInFromRight}
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true, margin: '-100px' }}
+            viewport={{ once: true, margin: "-100px" }}
             className="space-y-8"
           >
             <div className="space-y-6">
@@ -71,7 +73,7 @@ const About = () => {
               variants={staggerContainer}
               initial="hidden"
               whileInView="visible"
-              viewport={{ once: true, margin: '-100px' }}
+              viewport={{ once: true, margin: "-100px" }}
               className="grid grid-cols-2 gap-6 mt-12"
             >
               {stats.map((stat, index) => (
@@ -99,7 +101,7 @@ const About = () => {
           variants={fadeInUp}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, margin: '-100px' }}
+          viewport={{ once: true, margin: "-100px" }}
           className="mt-20"
         >
           <Card className="p-8 md:p-12 glass text-center max-w-4xl mx-auto">

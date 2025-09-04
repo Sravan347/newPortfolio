@@ -1,3 +1,20 @@
+import reactImg from "../assets/react.png";
+import nodeImg from "../assets/node.png";
+import pythonImg from "../assets/python.png";
+import jsImg from "../assets/javascript.png";
+import figmaImg from "../assets/figma.png";
+import gitImg from "../assets/git.png";
+import graphqlImg from "../assets/graphql.png";
+import reduxImg from "../assets/redux.png";
+import typescriptImg from "../assets/typescript.png";
+import tailwindImg from "../assets/tailwind.png";
+import nextImg from "../assets/nextjs.png";
+import mongodbImg from "../assets/mongodb.png";
+import postgresImg from "../assets/postgresql.png";
+import dockerImg from "../assets/docker.png";
+import expressImg from "../assets/express.png";
+
+
 export const navLinks = [
   { name: 'Home', href: '#hero' },
   { name: 'About', href: '#about' },
@@ -7,7 +24,7 @@ export const navLinks = [
 ];
 
 export const personalInfo = {
-  name: 'Alex Johnson',
+  name: 'Sravan Ks',
   role: 'MERN Stack Developer',
   tagline: 'Crafting elegant digital experiences with modern technologies',
   bio: 'Passionate full-stack developer with 5+ years of experience building scalable web applications. I specialize in React, Node.js, and cloud technologies, with a keen eye for design and user experience.',
@@ -19,38 +36,36 @@ export const personalInfo = {
 
 export const skills = [
   {
-    category: 'Frontend',
+    category: "Frontend",
     technologies: [
-      { name: 'React', level: 90, icon: '⚛️' },
-      { name: 'JavaScript', level: 95, icon: '🟨' },
-      { name: 'TypeScript', level: 85, icon: '🔷' },
-      { name: 'Tailwind CSS', level: 90, icon: '🎨' },
-      { name: 'Next.js', level: 80, icon: '▲' },
-      { name: 'Redux', level: 85, icon: '🔄' }
-    ]
+      { name: "React", level: 90, icon: reactImg },
+      { name: "JavaScript", level: 95, icon: jsImg },
+      { name: "TypeScript", level: 85, icon: typescriptImg },
+      { name: "Tailwind CSS", level: 90, icon: tailwindImg },
+      { name: "Next.js", level: 80, icon: nextImg },
+      { name: "Redux", level: 85, icon: reduxImg },
+    ],
   },
   {
-    category: 'Backend',
+    category: "Backend",
     technologies: [
-      { name: 'Node.js', level: 90, icon: '💚' },
-      { name: 'Express', level: 85, icon: '🚀' },
-      { name: 'MongoDB', level: 80, icon: '🍃' },
-      { name: 'PostgreSQL', level: 75, icon: '🐘' },
-      { name: 'GraphQL', level: 70, icon: '📊' },
-      { name: 'Python', level: 75, icon: '🐍' }
-    ]
+      { name: "Node.js", level: 90, icon: nodeImg },
+      { name: "Express", level: 85, icon: expressImg },
+      { name: "MongoDB", level: 80, icon: mongodbImg },
+      { name: "PostgreSQL", level: 75, icon: postgresImg },
+      { name: "GraphQL", level: 70, icon: graphqlImg },
+      { name: "Python", level: 75, icon: pythonImg },
+    ],
   },
   {
-    category: 'Tools & Cloud',
+    category: "Tools & Cloud",
     technologies: [
-      { name: 'Git', level: 90, icon: '📚' },
-      { name: 'Docker', level: 80, icon: '🐳' },
-      { name: 'AWS', level: 75, icon: '☁️' },
-      { name: 'Azure', level: 70, icon: '🌐' },
-      { name: 'Vercel', level: 85, icon: '🔺' },
-      { name: 'Figma', level: 80, icon: '🎨' }
-    ]
-  }
+      { name: "Git", level: 90, icon: gitImg },
+      { name: "Docker", level: 80, icon: dockerImg },
+
+      { name: "Figma", level: 80, icon: figmaImg },
+    ],
+  },
 ];
 
 export const projects = [
