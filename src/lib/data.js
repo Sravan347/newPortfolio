@@ -13,6 +13,11 @@ import mongodbImg from "../assets/mongodb.png";
 import postgresImg from "../assets/postgresql.png";
 import dockerImg from "../assets/docker.png";
 import expressImg from "../assets/express.png";
+import ecom from "../assets/ecom.webp";
+import todo from "../assets/todo.webp";
+import netflix from "../assets/netflix.jpg";
+import job from "../assets/job.jpg";
+
 
 
 export const navLinks = [
@@ -27,10 +32,10 @@ export const personalInfo = {
   name: 'Sravan Ks',
   role: 'MERN Stack Developer',
   tagline: 'Crafting elegant digital experiences with modern technologies',
-  bio: 'Passionate full-stack developer with 5+ years of experience building scalable web applications. I specialize in React, Node.js, and cloud technologies, with a keen eye for design and user experience.',
-  email: 'alex@example.com',
-  github: 'https://github.com/alexjohnson',
-  linkedin: 'https://linkedin.com/in/alexjohnson',
+  bio: 'Passionate full-stack developer with 1+ years of experience building scalable web applications. I specialize in React, Node.js, and cloud technologies, with a keen eye for design and user experience.',
+  email: 'sravansreyas3@gmail.com',
+  github: 'https://github.com/Sravan347',
+  linkedin: 'https://www.linkedin.com/in/sravanks2/',
   resume: '/resume.pdf'
 };
 
@@ -71,42 +76,42 @@ export const skills = [
 export const projects = [
   {
     id: 1,
-    title: 'E-Commerce Platform',
-    description: 'A full-stack e-commerce solution with React, Node.js, and MongoDB. Features include user authentication, payment processing, and admin dashboard.',
-    image: '/api/placeholder/600/400',
-    technologies: ['React', 'Node.js', 'MongoDB', 'Stripe', 'Tailwind CSS'],
-    github: 'https://github.com/alexjohnson/ecommerce-platform',
-    live: 'https://ecommerce-demo.vercel.app',
+    title: 'HireWave - Job Portal',
+    description: 'A full-stack MERN job portal with role-based authentication (Admin, Recruiter, Candidate). Features include job posting, resume upload, applicant tracking, interview scheduling, and offer management.',
+    image: job,
+    technologies: ['MongoDB', 'Express.js', 'React', 'Node.js', 'Redux Toolkit', 'Cloudinary', 'JWT'],
+    github: 'https://github.com/Sravan347',
+    live: 'https://github.com/Sravan347',
     featured: true
   },
   {
     id: 2,
-    title: 'Task Management App',
-    description: 'Collaborative task management application with real-time updates, drag-and-drop functionality, and team collaboration features.',
-    image: '/api/placeholder/600/400',
-    technologies: ['React', 'Express', 'Socket.io', 'PostgreSQL', 'Redux'],
-    github: 'https://github.com/alexjohnson/task-manager',
-    live: 'https://taskflow-app.vercel.app',
+    title: 'E-Commerce Platform',
+    description: 'A full-stack e-commerce solution with React, Node.js, and MongoDB. Features include user authentication, payment processing, and admin dashboard.',
+    image: ecom,
+    technologies: ['React', 'Node.js', 'MongoDB', 'Stripe', 'Tailwind CSS'],
+    github: 'https://github.com/Sravan347',
+    live: 'https://github.com/Sravan347',
     featured: true
   },
   {
     id: 3,
-    title: 'Weather Dashboard',
-    description: 'Beautiful weather dashboard with interactive maps, forecasts, and weather alerts. Built with modern React and weather APIs.',
-    image: '/api/placeholder/600/400',
-    technologies: ['React', 'Chart.js', 'OpenWeather API', 'Tailwind CSS'],
-    github: 'https://github.com/alexjohnson/weather-dashboard',
-    live: 'https://weather-pro.vercel.app',
+    title: 'Task Management App',
+    description: 'Collaborative task management application with real-time updates, drag-and-drop functionality, and team collaboration features.',
+    image: todo,
+    technologies: ['React', 'Express', 'Socket.io', 'PostgreSQL', 'Redux'],
+    github: 'https://github.com/Sravan347',
+    live: 'https://github.com/Sravan347',
     featured: false
   },
   {
     id: 4,
-    title: 'Social Media Analytics',
-    description: 'Analytics dashboard for social media metrics with data visualization, automated reporting, and performance insights.',
-    image: '/api/placeholder/600/400',
-    technologies: ['Next.js', 'D3.js', 'Python', 'FastAPI', 'PostgreSQL'],
-    github: 'https://github.com/alexjohnson/social-analytics',
-    live: 'https://social-insights.vercel.app',
+    title: 'Netflix Clone',
+    description: 'A Netflix-inspired movie streaming platform with user authentication, movie browsing, video playback, and responsive UI.',
+    image: netflix,
+    technologies: ['React', 'Firebase', 'TMDB API', 'Tailwind CSS'],
+    github: 'https://github.com/Sravan347',
+    live: 'https://github.com/Sravan347',
     featured: false
   }
 ];
@@ -114,37 +119,23 @@ export const projects = [
 export const socialLinks = [
   {
     name: 'GitHub',
-    url: 'https://github.com/alexjohnson',
+    url: 'https://github.com/Sravan347',
     icon: 'Github'
   },
   {
     name: 'LinkedIn',
-    url: 'https://linkedin.com/in/alexjohnson',
+    url: 'https://www.linkedin.com/in/sravanks2',
     icon: 'Linkedin'
   },
   {
     name: 'Email',
-    url: 'mailto:alex@example.com',
+    url: 'sravansreyas3@gmail.com',
     icon: 'Mail'
   },
   {
     name: 'Twitter',
-    url: 'https://twitter.com/alexjohnson',
+    url: 'https://twitter.com',
     icon: 'Twitter'
   }
 ];
 
-export const testimonials = [
-  {
-    name: 'Sarah Chen',
-    role: 'Product Manager at TechCorp',
-    content: 'Alex delivered exceptional work on our e-commerce platform. His attention to detail and technical expertise made the project a huge success.',
-    avatar: '/api/placeholder/80/80'
-  },
-  {
-    name: 'Michael Rodriguez',
-    role: 'CTO at StartupXYZ',
-    content: 'Working with Alex was a game-changer for our team. His full-stack skills and problem-solving abilities are truly impressive.',
-    avatar: '/api/placeholder/80/80'
-  }
-];
